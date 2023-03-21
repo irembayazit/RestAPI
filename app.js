@@ -58,7 +58,7 @@ app.use((error, req, res, next) => {
 
 mongoose
     .connect(
-        'mongodb+srv://<username>:<password>@cluster0.o2osslj.mongodb.net/messages?retryWrites=true'
+        'mongodb+srv://bayzt123:qweqwe@cluster0.o2osslj.mongodb.net/messages?retryWrites=true'
     )
     .then(result => app.listen(8080))
     .catch(err => console.log(err))
