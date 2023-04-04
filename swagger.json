@@ -1,0 +1,40 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "",
+    "description": "",
+    "version": "1.0"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "host": "localhost:8080",
+  "basePath": "",
+  "paths": {
+    "/feed/posts": {
+      "get": {
+        "x-swagger-router-controller": "",
+        "operationId": "",
+        "tags": [
+          "/test"
+        ],
+        "description": "",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "page",
+            "type": "integer"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success posts",
+            "schema": {
+              "type": "array"
+            }
+          }
+        }
+      }
+    }
+  }
+}
