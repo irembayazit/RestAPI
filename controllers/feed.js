@@ -55,9 +55,9 @@ exports.createPost = async (req, res, next) => {
     });
     try {
         await post.save();
-        const user = User.findById(req.userId);
+        const user = await User.findById(req.userId);
         console.log("user...", user.posts)
-        user.posts = [...user.posts, post]
+        user.posts.push(post);
         await user.save()
         io.getIO().emit('posts', {
             action: 'create',

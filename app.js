@@ -7,6 +7,7 @@ const multer = require('multer')
 const path = require('path');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsDoc = require('swagger-jsdoc');
+const {Server} = require('socket.io');
 
 const app = express()
 
@@ -104,7 +105,7 @@ app.use((error, req, res, next) => {
 
 mongoose
     .connect(
-        'mongodb+srv://bayzt123:qweqwe@cluster0.o2osslj.mongodb.net/messages?retryWrites=true'
+        'mongodb+srv://<username>:<password>@cluster0.o2osslj.mongodb.net/messages?retryWrites=true'
     )
     .then(result => {
         const server = app.listen(8080)
@@ -112,9 +113,6 @@ mongoose
         io.on('connection', socket => {
             console.log("client connect")
         })
-
-
-        io.listen(4000);
     })
     .catch(err => console.log(err))
 
